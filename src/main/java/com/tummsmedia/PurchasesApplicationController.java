@@ -27,7 +27,7 @@ public class PurchasesApplicationController {
     public void init()throws IOException {
         List<Customer> custList;
         custList = (List) customers.findAll();
-        if (custList.isEmpty()){
+        if (custList.isEmpty()) {
             File custFile = new File("customers.csv");
             Scanner fileScanner = new Scanner(custFile);
             int fileSize = (int) custFile.length();
@@ -38,7 +38,6 @@ public class PurchasesApplicationController {
                 Customer customer = new Customer(fileSplit[0], fileSplit[1]);
                 customers.save(customer);
             }
-
         }
         List<Purchase> purchaseList;
         custList.clear();
